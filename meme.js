@@ -1,6 +1,41 @@
-// If your element defines a background image with CSS, you can omit the argement altogether $(".foo").backstretch();
-
 $(document).ready(function(){
+
+  $('#refresh').click(function() {
+    randomQuote = true;
+    getRandomImage();
+  })
+  $('#quote').click(function() {
+// stage.removeChildAt(stage.children.length-1);
+    randomQuote = true;
+    getRandomThought();
+  })
+  $('#background').click(function() {
+    randomQuote = false;
+    getRandomImage();
+  })
+  $('#tweet').click(function() {
+
+  })
+
+  $('#screenshot')click(function() {
+
+  })
+
+var currentRandomQuote = "";
+var randomQuote = true;
+getRandomImage();
+
+// Getting Random Quote
+function getRandomQuote() {
+  $.get("https://www.reddit.com/r/quotes/.json", function(data) {
+    var random = Math.floor(Math.random()*17);
+    currentRandomQuote=data.data.children[random].data.title;
+    $(".quote").append('currentRandomQuote')//add text to div container
+  })
+}
+
+
+
 
 //Getting Random Space Image
   function getBackgroundImage() {
@@ -11,20 +46,14 @@ $(document).ready(function(){
         var image = data.data.children[i].data.url;
           if (image.match(/\.(jpg|jpeg|png|gif|bmp|tiff)$/i)) {
             goodImages.push(image);
-              console.log(goodImages);
+              // console.log(goodImages);
           }
         }
         // var random = Math.floor(Math.random*goodImages.length);
 
-
-        // var thumbnail = data.data.children[i].data.thumbnail;
-
-
-        $(".result").append( '<body>' + image + '</body>');
-        // $(".result").append('<img src=' + thumbnail + '>');
-
-    // Trying to display imagesource on the page through thumbnail url
-
+        $('myObject').css({
+          'background-image': 'url(' + imageUrl + '),' 'background-size': 'cover'
+        )};
     })
   }
 });
