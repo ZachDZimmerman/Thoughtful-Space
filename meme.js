@@ -5,7 +5,7 @@ $(document).ready(function(){
     getRandomImage();
   })
   $('#quote').click(function() {
-// stage.removeChildAt(stage.children.length-1);
+    // randomQuote.removeChildAt(randomQuote.length-1);
     randomQuote = true;
     getRandomThought();
   })
