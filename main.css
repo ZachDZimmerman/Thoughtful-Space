@@ -6999,7 +6999,7 @@ a.list-group-item-danger.active:focus {
 
 body{
 	/* This image will be displayed fullscreen */
-	background: url('http://www.tsene.com/wp-content/uploads/messenger_orbit.jpg') no-repeat fixed center;
+	background: url('') no-repeat fixed center;
 	height: 100vh;
   width: 100vw;
   background-size: cover;
