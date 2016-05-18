@@ -6995,6 +6995,7 @@ a.list-group-item-danger.active:focus {
 .navbar-default {
   display: flex;
   justify-content: center;
+  position: sticky;
 }
 
 body{
@@ -7017,7 +7018,7 @@ body{
   flex-wrap: wrap;
   align-items: center;
   background-color: transparent;
-  font-size: 5vw;
+  font-size: 10vmin;
   text-shadow: 2px 5px 5px black;
 
 }
