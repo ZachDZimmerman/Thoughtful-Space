@@ -6996,6 +6996,8 @@ a.list-group-item-danger.active:focus {
   display: flex;
   justify-content: center;
   position: sticky;
+  background-color: transparent;
+  text-shadow: 2px 5px 5px black;
 }
 
 body{
@@ -7004,12 +7006,12 @@ body{
 	height: 100vh;
   width: 100vw;
   background-size: cover;
+  overflow: hidden;
+}
+li {
+  font-size: 3vmin;
 }
 
-
-/*li {
-  font-size: 2vmin;
-}*/
 .jumbotron .container div{
   display: flex;
   text-align: center;
@@ -7020,5 +7022,4 @@ body{
   background-color: transparent;
   font-size: 10vmin;
   text-shadow: 2px 5px 5px black;
-
 }

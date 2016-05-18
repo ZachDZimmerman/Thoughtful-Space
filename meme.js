@@ -1,7 +1,16 @@
 $(document).ready(function() {
 
+  // Hosting variables to run in functions
+  var currentRandomQuote;
+  randomQuote = true;
+  getRandomQuote();
+  getBackgroundImage();
+
   $('#refresh').click(function() {
-      randomQuote = true
+    $('.quote').empty();
+    if (randomQuote = true) {
+        getRandomQuote();
+    }
       getBackgroundImage();
   })
 
@@ -20,11 +29,7 @@ $(document).ready(function() {
       // $('#screenshot')click(function() {
       // })
 
-  // Hosting variables to run in functions
-  var currentRandomQuote;
-  randomQuote = true;
-  getRandomQuote();
-  getBackgroundImage();
+
 
 
   // Getting Random Quote
