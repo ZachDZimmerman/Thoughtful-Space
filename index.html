@@ -21,33 +21,34 @@
                 <li><a href="#" id='refresh' class="btn-primary btn-lg" role="refresh">Refresh</a></li>
                 <li><a href="#" id='quote' class="btn-primary btn-lg" role="new quote">New Quote</a></li>
                 <li><a href="#" id='background' class="btn-primary btn-lg" role="new background">New Background</a></li>
-                <li><a href="https://twitter.com/share" id='tweet' class="btn-primary btn-lg" role="tweet" class="twitter-share-button" data-via="ZacZ" data-size="large" data-related="ZacZ" data-hashtags="SpaceQuotes" data-dnt="true">Tweet</a>
-                    <script>
-                        ! function(d, s, id) {
-                            var js, fjs = d.getElementsByTagName(s)[0],
-                                p = /^http:/.test(d.location) ? 'http' : 'https';
-                            if (!d.getElementById(id)) {
-                                js = d.createElement(s);
-                                js.id = id;
-                                js.src = p + '://platform.twitter.com/widgets.js';
-                                fjs.parentNode.insertBefore(js, fjs);
-                            }
-                        }(document, 'script', 'twitter-wjs');
-                    </script>
-                    </a>
-                </li>
                 <li><a href="#" id='screenshot' class="btn-primary btn-lg" role="screenshot">Screenshot</a></li>
+                <li class="dropdown">
+                    <a href="#" class="btn-primary btn-lg" "dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Share! <span class="caret"></span></a>
+                    <ul class="dropdown-menu dropdown-menu-right">
+                        <li>
+                            <a href="#">
+                                <i class='fa fa-twitter'> </i> Tweet</a>
+                        </li>
+                        <li><a href="#">Post to FB</a></li>
+                    </ul>
+                </li>
             </ul>
         </div>
     </nav>
 
-    <!-- <div class="container">
-        <div class="container row">
+    <div class="jumbotron">
+        <div class="container">
 
         </div>
-    </div> -->
+    </div>
+
+
+
+
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <!-- <script src="https://platform.twitter.com/widgets.js"></script> -->
     <script src="meme.js"></script>
 </body>
 

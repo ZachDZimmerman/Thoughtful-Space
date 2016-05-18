@@ -1,36 +1,54 @@
 $(document).ready(function(){
 
+// global randomQuote array
+var randomQuoteArray = [];
+
   $('#refresh').click(function() {
     randomQuote = true;
-    getRandomImage();
+    // getBackgroundImage();
   })
   $('#quote').click(function() {
-    // randomQuote.removeChildAt(randomQuote.length-1);
-    randomQuote = true;
-    getRandomThought();
+
+    if (randomQuote = true) {
+      getRandomQuote();
+    } else {
+      randomQuoteArray = [];
+    }
+
   })
   $('#background').click(function() {
-    randomQuote = false;
-    getRandomImage();
+    // randomQuote = false;
+    // getBackgroundImage();
   })
-  $('#tweet').click(function() {
+  // $('#screenshot')click(function() {
+  // })
 
-  })
+  // $('#tweet').click(function() {
+  //   var js, fjs = d.getElementsByTagName(s)[0],
+  //       p = /^http:/.test(d.location) ? 'http' : 'https';
+  //   if (!d.getElementById(id)) {
+  //       js = d.createElement(s);
+  //       js.id = id;
+  //       js.src = p + '://platform.twitter.com/widgets.js';
+  //       fjs.parentNode.insertBefore(js, fjs);
+  //   }
+  // });
 
-  $('#screenshot')click(function() {
-
-  })
-
-var currentRandomQuote = "";
+// Hosting variables to run in functions
+var currentRandomQuote;
 var randomQuote = true;
-getRandomImage();
+getRandomQuote();
+getBackgroundImage();
+
 
 // Getting Random Quote
 function getRandomQuote() {
-  $.get("https://www.reddit.com/r/quotes/.json", function(data) {
-    var random = Math.floor(Math.random()*17);
-    currentRandomQuote=data.data.children[random].data.title;
-    $(".quote").append('currentRandomQuote')//add text to div container
+  $.get("https://www.reddit.com/r/quotes/top/.json?sort=top&t=month", function(data){
+    var random = Math.floor(Math.random()* 25);
+    // console.log(random);
+    currentRandomQuote = data.data.children[random].data.title;
+    // console.log(currentRandomQuote);
+    $('.container').append('<div>' + currentRandomQuote + '</div>');
   })
 }
 
@@ -46,14 +64,16 @@ function getRandomQuote() {
         var image = data.data.children[i].data.url;
           if (image.match(/\.(jpg|jpeg|png|gif|bmp|tiff)$/i)) {
             goodImages.push(image);
-              // console.log(goodImages);
-          }
+            }
         }
-        // var random = Math.floor(Math.random*goodImages.length);
+          console.log(goodImages);
+          
+          var random = Math.floor(Math.random * goodImages.length);
+          $("body").css({
+          'background-image': 'url(' + goodImages[random] + ')'
 
-        $('myObject').css({
-          'background-image': 'url(' + imageUrl + '),' 'background-size': 'cover'
-        )};
+        });
     })
   }
+
 });
