@@ -8,13 +8,11 @@ var randomQuoteArray = [];
     // getBackgroundImage();
   })
   $('#quote').click(function() {
+    $('.quote').empty();
 
     if (randomQuote = true) {
       getRandomQuote();
-    } else {
-      randomQuoteArray = [];
     }
-
   })
   $('#background').click(function() {
     // randomQuote = false;
@@ -36,7 +34,7 @@ var randomQuoteArray = [];
 
 // Hosting variables to run in functions
 var currentRandomQuote;
-var randomQuote = true;
+randomQuote = true;
 getRandomQuote();
 getBackgroundImage();
 
@@ -48,7 +46,7 @@ function getRandomQuote() {
     // console.log(random);
     currentRandomQuote = data.data.children[random].data.title;
     // console.log(currentRandomQuote);
-    $('.container').append('<div>' + currentRandomQuote + '</div>');
+    $('.quote').append(currentRandomQuote);
   })
 }
 
@@ -67,7 +65,7 @@ function getRandomQuote() {
             }
         }
           console.log(goodImages);
-          
+
           var random = Math.floor(Math.random * goodImages.length);
           $("body").css({
           'background-image': 'url(' + goodImages[random] + ')'
