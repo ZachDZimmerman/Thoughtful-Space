@@ -33,7 +33,7 @@ $(document).ready(function() {
   });
 
   $("#facebookBtn").click(function() {
-    window.open("https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2F" + url + "%2F&display=popup&ref=plugin&src=share_button")
+    window.open("https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fzz-quarter1-project.firebaseapp.com%2F&display=popup&ref=plugin&src=share_button")
   });
 
 // , function(response){});
