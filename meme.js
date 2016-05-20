@@ -1,12 +1,12 @@
 $(document).ready(function() {
 
-  // Hosting variables to run in functions
+  // Hosting variables
   var currentRandomQuote;
   var currentRandomBackground;
   randomQuote = true;
   getRandomQuote();
   getBackgroundImage();
-  var url= window.location.href;
+  var windowUrl= window.location.href;
 
   $('#refresh').click(function() {
     $('.quote').empty();
@@ -29,14 +29,12 @@ $(document).ready(function() {
   })
 
   $("#twitterBtn").click(function() {
-    window.open("https://twitter.com/intent/tweet?text=Thoughtful+Space+By+@ZacZ&hashtags=SpaceQuotes " + url);
+    window.open("https://twitter.com/intent/tweet?text=Thoughtful+Space+By+@ZacZ&hashtags=SpaceQuotes " + windowUrl);
   });
 
   $("#facebookBtn").click(function() {
     window.open("https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fzz-quarter1-project.firebaseapp.com%2F&display=popup&ref=plugin&src=share_button")
   });
-
-// , function(response){});
 
   // Getting Random Quote
   function getRandomQuote() {
@@ -48,7 +46,6 @@ $(document).ready(function() {
           $('.quote').append(currentRandomQuote);
       })
   }
-
 
   //Getting Random Space Image
   function getBackgroundImage() {
