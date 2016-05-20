@@ -7023,3 +7023,9 @@ li {
   font-size: 7.5vmin;
   text-shadow: 2px 5px 5px black;
 }
+
+html, body, a, #share {
+  cursor: url("inclined-rocket.png"), auto;
+  cursor: -webkit-image-set(
+  url("inclined-rocket.png") 1x, auto;
+}
